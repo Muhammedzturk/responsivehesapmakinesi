@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+}
+.pablo{
+  width: %100;
+}
+.dis{
+	width: 300px;
+	margin:0 auto;
+	
+}
+.container{
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-gap: 10px ;
+}
+.islem{
+   	margin-bottom: 5px;
+    border:1px solid gray;
+    background-color: white;
+  
+}
+.temizle,.sifir   {
+  grid-column: span 3;
+}
+.buton{
+    border-radius: 3px;
+    border: 1px solid lightblue;
+    cursor: pointer;
+
+}
+.buton:hover{
+  background-color: blue;
+  
+}
+input{
+  border:none;
+  
+  outline: none;
+  font-size: 30px;
+  padding: 10px 10px;
+  width: 100%;
+  
+  color: black;
+  text-align: right;
+  
+ 
+}
+
+@media only screen and (min-width: 576px){
+  .pablo{
+    max-width: 540px;
+  }
+   .metin{
+    font-size: 10px;
+     width: 25%;
+  }
+ 
+  .dis{
+    width: 300px;
+  }
+  .container,.islem{
+    width: 40%;
+  }
+}
+
+@media only screen and  (min-width: 768px){
+  .pablo{
+    max-width: 720px;
+  }
+   .metin{
+    font-size: 20px;
+     width: 50%;
+  }
+  
+  .dis{
+    width: 240px;
+  }
+  .container,.islem{
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 992px){
+  .pablo{
+    max-width: 960px;
+  }
+   .metin{
+    font-size: 30px;
+    width: 75%;
+  }
+   
+  .dis{
+    width: 320px;
+  }
+  .container,.islem{
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 1200px){
+  .pablo{
+    max-width: 1140px;
+  }
+  .metin{
+    font-size: 40px;
+    width: 100%;
+  }
+  .dis{
+    width: 420px;
+  }
+  .container,.islem{
+    width: 100%;
+  }
+}

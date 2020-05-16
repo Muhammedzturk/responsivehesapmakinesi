@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hesap Makinesi</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+	<script>
+   	var sayi1=0;
+   	var sayi2=0;
+   	let check=true;
+   	var number =0;
+   	var yeni=0;
+   	var sonuc=0;
+   	var op;
+   		$(function(){
+   			for(var i=0; i<10; i++){
+   				$("#buton"+i).click(function(){
+   					if(check == true ){
+   						var value = $(this).html();
+   						number=number*10+parseInt(value);
+   						sayi1=number;
+   						$("#metin").val(sayi1); 						
+   					}
+   					else{
+   						var value2 = $(this).html();
+   						yeni=yeni*10+parseInt(value2);						
+   						sayi2=yeni;
+   						$("#metin").val(sayi2);
+   						
+   					}	
+   					$(".op").click(function(){
+   						check=false;
+   						op=$(this).text();
+   						$("#metin").html("");
+   						if(op === "="){ 					
+   						$("#metin").val(sonuc);   										
+   						}
+   					});
+   					$(".temizle").click(function(){
+   						$("#metin").val("");
+   						sonuc=0;
+   						number=0;
+   						yeni=0;
+   						check=true;
+   						
+   						});
+   					if(op === "+"){
+   						sonuc=0;					
+   						sonuc=sayi1+sayi2;
+   						
+   					}
+   					else if(op === "/"){
+   						sonuc=0;
+   						sonuc=sayi1/sayi2;
+   						
+   					}
+   					else if(op === "*"){
+   						sonuc=0;
+   						sonuc=sayi1*sayi2;
+   						
+   					}
+   					else if(op === "-"){
+   						sonuc=0;
+   						sonuc=sayi1-sayi2;
+   						
+   					}
+   				});
+   			}
+		});	
+   </script> 
+	
+</head>
+
+<body>
+	<div class="pablo">
+	<div class="dis">
+		<div class="islem">
+			
+				<input  type="number" id="metin" placeholder="0" >
+		</div>
+		<div class="container">
+			<button class="buton temizle">CE</button>
+			<button class="buton op">/</button>
+			<button id="buton7" class="buton" >7</button>
+			<button id="buton8" class="buton">8</button>
+			<button id="buton9" class="buton">9</button>
+			<button class="buton op">*</button>
+			<button id="buton4" class="buton">4</button>
+			<button id="buton5" class="buton">5</button>
+			<button id="buton6" class="buton">6</button>
+			<button class="buton op">-</button>
+			<button id="buton1" class="buton">1</button>
+			<button id="buton2" class="buton">2</button>
+			<button id="buton3" class="buton">3</button>
+			<button class="buton op">+</button>
+			
+			<button id="buton0" class="buton sifir">0</button>
+			<button class="buton esittir op ">=</button>
+		</div>
+    </div>
+</div>
+</body>
+</html>
